@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8 />
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta name=theme-color content=#2e393b />
+<meta name=robots content=noindex /><title>DevMarks | DEV Bookmarks</title>
+<link rel=icon type=image/png href=192.png><link rel=apple-touch-icon href=192.png>
+<link rel=preload href=./json/data.json as=fetch crossorigin=anonymous>
+<style media=screen>.card:hover, input{ box-shadow: 0 0.5rem 0.75rem 0 #00000033} h3, input{ margin: 0.625rem auto} *{ box-sizing: border-box; text-align: center; margin: 0; font-weight: 300; text-decoration: none; color: #cacaf7} body{ background-color: #2e393b} .card{ box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, .2); margin: 0.75rem 0.875rem auto; width: 36%; border-radius: 1.25rem; padding: 0.5rem; display: inline-block} .name{ width: 50%; padding: 0.75rem} input{ border-radius: 1.875rem; padding: 0.625rem; width: 80%; border: 0; outline: 0} .card, input{ background-color: #485759} h3{ font-weight: 400; font-size: medium}sup{ background-color: #95aeb325; padding:0 0.25rem; border-radius:0.25rem} @media only screen and (max-width:48em){ h3>sup{ display: none;}} @media only screen and (min-width:48em){ .card, .name{ padding: 1rem} body{ margin: 1.25rem auto} input{ margin: 1rem} .card{ margin: 1rem; width: 15%; font-size: large} .name{ width: 20%}}</style>
+</head>
+<body>
+<div>
+<div class="card name">
+<h2><a href=https://github.com/devmarks/devmarks.github.io>Devmarks</a></h2>
+</div>
+</div>
+<input type=text name=input value id=myInput onkeyup=searchFunction() placeholder=Search....&#128269; autofocus aria-label=search title=search>
+<div class=main id=main>
+<div class=data-in></div><br>
+</div>
+<script>function http(){this.xhr=new XMLHttpRequest()}http.prototype.get=function(t,n){this.xhr.open("GET",t,!0);let e=this;(this.xhr.onload=function(){200==e.xhr.status&&n(e.xhr.responseText)}),this.xhr.send()};const myhttp=new http();myhttp.get("./json/data.json",function(t){JSON.parse(t).data.forEach(function(t){document.querySelector(".data-in").innerHTML+=`<div class=card><a href=${t.link} rel=noreferrer><h3>${t.name} <sup>${t.cat}</sup></h3></a></div>`})});</script>
+<script>function searchFunction(){const filter=document.querySelector('#myInput').value.toUpperCase();const trs=document.querySelectorAll('#main div:not(.header)');trs.forEach(div=>div.style.display=[...div.children].find(h3=>h3.innerHTML.toUpperCase().includes(filter))?'':'none');}</script>
+<script>if('serviceWorker'in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js');});}</script>
+</body>
+</html>

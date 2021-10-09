@@ -1,0 +1,21 @@
+{
+  "name": "@fynks/devmarks",
+  "version": "2.0.1",
+  "description": "",
+  "main": "index.html",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "minifyall --dir ./src/ && rsync -a --delete ./src/ ./dist/json && workbox generateSW workbox-config.js",
+    "publish":"npm publish"
+  },
+  "author": "Fynks",
+  "email": "",
+  "dependencies": {
+  "workbox-cli": "^6.3.0",
+  "@josee9988/minifyall": "^1.2.2"
+}
+}
