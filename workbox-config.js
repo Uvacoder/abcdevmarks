@@ -1,7 +1,39 @@
 module.exports = {
-  "globDirectory": "./dist/",
-  "globPatterns": [
-    "**/*.{css,png,html}"
+  globDirectory: "./dist/",
+  globPatterns: [
+    "**/*.{html,ico}"
   ],
-  "swDest": "./dist/sw.js"
+  globIgnores: [
+    "node_modules/**/*",
+    "{.,_}*/**/*",
+    "**/*.{md,txt}",
+    "Gemfile*",
+    "package*"
+  ],
+  runtimeCaching: [
+    {
+      urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'images',
+        expiration: {
+          maxEntries: 10,
+          maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
+        },
+      },
+    },
+    {
+      urlPattern: /\.(?:json)$/,
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'json',
+        expiration: {
+          maxEntries: 10,
+          maxAgeSeconds: 60 * 60 * 24, //  24 hours
+        },
+      },
+    }
+  ],
+  swDest: "./dist/sw.js",
+  sourcemap: false
 };
