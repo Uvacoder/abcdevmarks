@@ -20,7 +20,10 @@
       "link": "https://matthewkosloski.me/labs/pixem/editor/",
       "cat": "tool"
     },
-    { "name": "Wormhole", "link": "https://wormhole.app/", "cat": "tool" },
+    { "name": "Wormhole",
+     "link": "https://wormhole.app/",
+     "cat": "tool"
+    },
     {
       "name": "WA Reader",
       "link": "https://wareader.nethruster.com/",
@@ -74,6 +77,16 @@
     {
       "name": "Tabler Icons",
       "link": "https://tablericons.com/",
+      "cat": "svg"
+    },
+    {
+      "name": "Icon Finder",
+      "link": "https://www.iconfinder.com/",
+      "cat": "svg"
+    },
+    {
+      "name": "Super Tiny Icons",
+      "link": "https://github.com/edent/SuperTinyIcons",
       "cat": "svg"
     },
     {
@@ -296,6 +309,16 @@
       "name": "Bromite Filters",
       "link": "https://github.com/xarantolus/filtrite",
       "cat": "tool"
+    },
+    {
+      "name": "No Print JS",
+      "link": "https://github.com/sunxvogy/NoPrint.js/",
+      "cat": "tool"
+    },
+    {
+      "name": "Awesome Python",
+      "link": "https://pythonawesome.com/tag/scripts/",
+      "cat": "src"
     },
     {
       "name": "Awesome",
