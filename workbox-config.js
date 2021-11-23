@@ -24,7 +24,7 @@ module.exports = {
     },
     {
       urlPattern: /\.(?:json)$/,
-      handler: 'NetworkFirst',
+      handler: 'CacheFirst',
       options: {
         cacheName: 'json',
         expiration: {

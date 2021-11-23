@@ -7,20 +7,31 @@
 <meta name=robots content=noindex /><title>DevMarks | DEV Bookmarks</title>
 <link rel=icon type=image/png href=192.png><link rel=apple-touch-icon href=192.png>
 <link rel=preload href=./json/data.json as=fetch crossorigin=anonymous>
-<style media=screen>*{ box-sizing: border-box; text-align: center; margin: 0; font-weight: 300; text-decoration: none; color: #cacaf7} body{ background-color: #2e393b} .card{ box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, .2); margin: 0.75rem 0.875rem auto; width: 36%; border-radius: 1.25rem; padding: 0.5rem; display: inline-block} .card:hover, input{ box-shadow: 0 0.5rem 0.75rem 0 #00000033} h3, input{ margin: 0.625rem auto} .name{ width: 50%; padding: 0.75rem} input{ border-radius: 1.875rem; padding: 0.625rem; width: 80%; border: 0; outline: 0} .card, input{ background-color: #485759} h3{ font-weight: 400; font-size: medium} sup{ background-color: #95aeb325; padding: 0 0.25rem; border-radius: 0.25rem} @media only screen and (max-width:48em){ h3>sup{ display: none;}} @media only screen and (min-width:48em){ .card, .name{ padding: 1rem} body{ margin: 1.25rem auto} input{ margin: 1rem} .card{ margin: 1rem; width: 25%; font-size: large} .name{ width: 20%}} @media only screen and (min-width:70em){ .card{ width: 15%;}}</style>
+<style>:root{--bgc:#fff;--box-shadow:.0625rem 0rem .4375rem 0 rgba(215,234,243,0.6);--text-color:rgba(0,0,0,0.685)}*,::after,::before{box-sizing:border-box;text-decoration:none}html{scroll-behavior:smooth}body{background:#f4f9fb;color:var(--text-color)}a{color:var(--text-color)}a:visited{color:green}header{background-color:var(--bgc);box-shadow:var(--box-shadow);padding:1rem .5rem 2rem;margin:auto;width:98%;text-align:center;max-width:50rem;border-radius:1rem}header h2{font-weight:500;color:var(--text-color)}input{padding:.3rem;width:80%;margin:.1rem auto .5rem auto;text-align:center;border:.1px solid rgba(0,0,0,0.486);border-radius:1rem}input:focus,input:focus-visible{outline:0}.main{padding:1rem;margin:-2rem auto}table{max-width:50rem;margin:0 auto;caption-side:bottom;border-collapse:collapse;width:100%;margin-bottom:1rem;color:#212529;vertical-align:top;border-color:#dee2e6}tbody,td,thead,tr{border-color:inherit;border-width:0}.table>:not(caption)>*>*{padding:.5rem .5rem;border-bottom-width:.0625rem}.table.table-style{border-collapse:separate;border-spacing:0 .625rem}.table.table-style tr td:first-child,th:first-child{text-indent:1rem}.table.table-style tr td:last-child{border-left:.3125rem solid #f4f9fb;font-family:monospace;text-align:center}td{border-top:0rem;line-height:2.25rem}tbody>tr{box-shadow:var(--box-shadow);background:var(--bgc)}</style>
+<title></title>
 </head>
 <body>
-<div>
-<div class="card name">
-<h2><a href=https://github.com/fynks/devmarks>Devmarks</a></h2>
+<header>
+<h2><a href=#>DevMarks</a></h2>
+<input autofocus type=search class=light-table-filter data-table=order-table placeholder=search... autofocus>
+</header>
+<main>
+<div class=main>
+<table class="table table-style order-table">
+<thead>
+<tr>
+<th width=60%></th>
+<th width=40%></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 </div>
-</div>
-<input type=text name=input value id=myInput onkeyup=searchFunction() placeholder=Search....&#128269; autofocus aria-label=search title=search>
-<div class=main id=main>
-<div class=data-in></div><br>
-</div>
-<script>function http(){this.xhr=new XMLHttpRequest()}http.prototype.get=function(t,n){this.xhr.open("GET",t,!0);let e=this;(this.xhr.onload=function(){200==e.xhr.status&&n(e.xhr.responseText)}),this.xhr.send()};const myhttp=new http();myhttp.get("./json/data.json",function(t){JSON.parse(t).data.forEach(function(t){document.querySelector(".data-in").innerHTML+=`<div class=card><a href=${t.link} rel=noreferrer><h3>${t.name} <sup>${t.cat}</sup></h3></a></div>`})});</script>
-<script>function searchFunction(){const filter=document.querySelector('#myInput').value.toUpperCase();const trs=document.querySelectorAll('#main div:not(.header)');trs.forEach(div=>div.style.display=[...div.children].find(h3=>h3.innerHTML.toUpperCase().includes(filter))?'':'none');}</script>
+</main>
+<footer></footer>
+<script>function http(){this.xhr=new XMLHttpRequest()}http.prototype.get=function(t,n){this.xhr.open("GET",t,!0);let e=this;(this.xhr.onload=function(){200==e.xhr.status&&n(e.xhr.responseText)}),this.xhr.send()};const myhttp=new http();myhttp.get("./json/data.json",function(t){JSON.parse(t).data.forEach(function(t){document.querySelector("tbody").innerHTML+=`<tr><td class=name><a href=${t.link}rel=noreferrer>${t.name}</a></td><td>${t.cat}</td></tr>`})});</script>
+<script>(function(a){var b=(function(f){var c;function e(h){c=h.target;var g=a.getElementsByClassName(c.getAttribute("data-table"));f.forEach.call(g,function(i){f.forEach.call(i.tBodies,function(j){f.forEach.call(j.rows,d)})})}function d(i){var h=i.textContent.toLowerCase(),g=c.value.toLowerCase();i.style.display=h.indexOf(g)===-1?"none":"table-row"}return{init:function(){var g=a.getElementsByClassName("light-table-filter");f.forEach.call(g,function(h){h.oninput=e})}}})(Array.prototype);a.addEventListener("readystatechange",function(){if(a.readyState==="complete"){b.init()}})})(document);</script>
 <script>if('serviceWorker'in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js');});}</script>
 </body>
 </html>
