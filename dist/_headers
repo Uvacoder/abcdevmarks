@@ -5,7 +5,7 @@
  X-Content-Type-Options: nosniff
  Permissions-Policy: geolocation=()
  Permissions-Policy: interest-cohort=()
- Feature-Policy: microphone 'none'; geolocation 'none'
+ Feature-Policy: microphone 'none'
  Content-Security-Policy: upgrade-insecure-requests
  X-Permitted-Cross-Domain-Policies: none
  Expect-CT: max-age=43200, enforce, report-uri="https://example.netlify.app/report"
