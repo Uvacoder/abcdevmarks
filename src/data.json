@@ -66,6 +66,11 @@
       "name": "CSS Script"
     },
     {
+      "cat": "css,animation,tool",
+      "link": "https://webcode.tools/generators/css/keyframe-animation",
+      "name": "Animation Generator"
+    },
+    {
       "cat": "encryption,tool",
       "link": "https://github.com/Greenheart/pagecrypt",
       "name": "Page Crypt"
