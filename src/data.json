@@ -51,6 +51,21 @@
       "name": "Formatter"
     },
     {
+      "cat": "css,tool",
+      "link": "https://www.joshwcomeau.com/shadow-palette/",
+      "name": "Shadow Palette"
+    },
+    {
+      "cat": "css,tool",
+      "link": "https://fancy-borders.mdbgo.io/",
+      "name": "Fancy Borders"
+    },
+    {
+      "cat": "css,tool",
+      "link": "https://fffuel.co/cccolor/",
+      "name": "Color Picker"
+    },
+   {
       "cat": "css,cli,tool,npm",
       "link": "https://purgecss.com/CLI.html",
       "name": "PurgeCSS"
